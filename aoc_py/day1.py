@@ -19,6 +19,8 @@ print(total_part1)
 
 ##PART II##
 test = "two1nine\neightwothree\nabcone2threexyz\nxtwone3four\n4nineeightseven2\nzoneight234\n7pqrstsixteen"
+
+#Keeping the first and last letter in case of overlaps
 translate = [("one", "o1e"),("two", "t2o"), ("three", "t3e"), ("four", "f4r"),("five", "f5e"),("six", "s6x"),("seven", "s7n"),("eight", "e8t"),("nine", "n9e")]
 
 #inp = [x for x in test.split("\n")]
