@@ -1,3 +1,4 @@
 inputdata*
 .vscode
 aoc_rust/target
+.DS_Store
