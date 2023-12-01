@@ -2,7 +2,8 @@ use std::fs::{self, OpenOptions};
 use std::env;
 use reqwest::header::COOKIE;
 use crate::solutions2023::{
-    day1
+    day1,
+    day2
 };
 
  #[derive(Debug)]
@@ -29,7 +30,7 @@ use crate::solutions2023::{
 
     let d_only = matches!(args.next(), Some(arg) if arg == "-d");
 
-    if day > 25 && day < 1 {
+    if !(1..=25).contains(&day) {
         Err("Day must be between 1 and 25")
     } else {
         Ok(Config {
@@ -46,6 +47,7 @@ pub fn solver(year: u32, day: u32) -> Result<(String, String), &'static str> {
 
     match day {
         1 => Ok(day1::day1solver(&input)),
+        2 => Ok(day2::day2solver(&input)),
         _ => Err("Invalid day"),
     }
     
