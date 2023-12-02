@@ -4,7 +4,7 @@ pub fn day2solver(i: &str) -> (String, String){
     (part_i(i).to_string(), part_ii(i).to_string())
 }
 
-//Today's rust solution is no my own, but I based it on a reddit submission. 
+//Today's rust solution is not my own, but I based it on a reddit submission. 
 //Python was easy, but couldn't crack the rust version. 
 //However it was still good practice.
 
