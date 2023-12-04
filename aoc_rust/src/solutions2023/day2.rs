@@ -41,7 +41,7 @@ fn part_ii(i: &str) -> i32 {
             let (mut max_red, mut max_green, mut max_blue) = (0,0,0);
             rounds.split("; ").for_each(|round| {
                 round.split(", ").for_each(|pair| {
-                    let (num, color) = pair.split_once(" ").unwrap();
+                    let (num, color) = pair.split_once(' ').unwrap();
                     let point = num.parse::<i32>().unwrap();
                     match color {
                         "red" => max_red = cmp::max(max_red, point),
