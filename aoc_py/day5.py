@@ -11,4 +11,33 @@ inp = [x.replace('\n','') for x in open('inputdata_day5')]
 ########
 #PART I#
 ########
-# Maybe I'll get back to this later, but I'm already falling behind on rust as well, so who knows...
+seeds = [int(x) for x in inp[0].lstrip('seds: ').split(' ')]
+
+location =[]
+for start in seeds:
+    seed = start
+    found = False
+    for line in inp[3:]:
+        if line and line[0].isdigit():
+            (source, destination, length) = (int(x) for x in line.split())
+            if not found:
+                if seed >= destination and seed <= destination+(length-1):
+                    seed = source + (seed - destination)
+                    found = True
+            else:
+                continue
+        elif line and line[0].isalpha:
+            found = False
+        else:
+            continue
+        
+    location.append(seed)
+            
+print(min(location))
+
+#########
+#PART II#
+#########
+
+#I'll get to part II later maybe...
+#EDIT: I managed to commit without the actually working Part i...
