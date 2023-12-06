@@ -61,7 +61,7 @@ pub fn solver(year: u32, day: u32) -> Result<(String, String), &'static str> {
     
 }
 
-fn datagetter(year: u32, day: u32) -> String {
+pub fn datagetter(year: u32, day: u32) -> String {
     let fname = format!("inputdata_day{}", &day.to_string());
     let url = format!("https://adventofcode.com/{}/day/{}/input", &year.to_string(), &day.to_string());
     
