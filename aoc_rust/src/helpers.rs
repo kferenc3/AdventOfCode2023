@@ -3,7 +3,11 @@ use std::env;
 use reqwest::header::COOKIE;
 use crate::solutions2023::{
     day1,
-    day2
+    day2,
+    day3,
+    day4,
+    day5,
+    day6
 };
 
  #[derive(Debug)]
@@ -48,6 +52,10 @@ pub fn solver(year: u32, day: u32) -> Result<(String, String), &'static str> {
     match day {
         1 => Ok(day1::day1solver(&input)),
         2 => Ok(day2::day2solver(&input)),
+        3 => Ok(day3::day3solver(&input)),
+        4 => Ok(day4::day4solver(&input)),
+        5 => Ok(day5::day5solver(&input)),
+        6 => Ok(day6::day6solver(&input)),
         _ => Err("Invalid day"),
     }
     
