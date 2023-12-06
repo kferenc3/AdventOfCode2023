@@ -27,7 +27,7 @@ fn neighbors(c: &(usize,usize), h: usize, w: usize) -> Vec<(usize,usize)> {
     let c2 = c.1;
     let c3 = if c.0 !=0 {c.0-1} else {0_usize}; 
     let c4 = if c.1 !=0 {c.1-1} else {0_usize};
-    let mut res = vec![(c1+1, c2), (c3, c2), (c1, c2+1), (c1, c4), (c1+1,c2+1), (c3,c4), (c3, c2+1), (c1+1, c4)]
+    let mut res = [(c1+1, c2), (c3, c2), (c1, c2+1), (c1, c4), (c1+1,c2+1), (c3,c4), (c3, c2+1), (c1+1, c4)]
         .iter()
         .filter(|(c3, c4)| *c3<=h && *c4<=w)
         .cloned()
@@ -110,9 +110,9 @@ fn day3_main(i: &str) -> (i32,i32) {
             total_part1 += part.number;
         }
     }
-    for (k,v) in total_part2 {
+    for (_k,v) in total_part2 {
         if v.len() == 2 {
-            part2res += v.iter().fold(1,|a, b| a*b);
+            part2res += v.iter().product::<i32>();
         }
     };
     
