@@ -19,16 +19,14 @@ for (cardnum, i) in cards.iter().enumerate(){
     let player_numbers = i[1].split(' ').collect::<Vec<&str>>();
     let mut winners = 0;
     for pn in player_numbers {
-        if pn != "" {
-            if winning_numbers.contains(&pn) {
-                winners += 1;
-            }
+        if !pn.is_empty() && winning_numbers.contains(&pn){
+            winners += 1;
         }
     }
     if winners > 0 {
         total_part1 += 2_i32.pow(winners-1);
         *cards_won.entry(cardnum).or_insert(0) += 1;
-        for p in 0..cards_won[&cardnum] {
+        for _p in 0..cards_won[&cardnum] {
             let mut i = 1;
             for _x in 0..winners{
                 *cards_won.entry(cardnum+i).or_insert(0) += 1;
