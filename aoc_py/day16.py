@@ -71,4 +71,4 @@ print(len(np.where(energized=='#')[0]))
 end = time.time()
 print('Runtime: {:.2}'.format(end-start))
 
-#Dumb brute force method, but it got 1 start. I got bored/fed up with this day, so I'll leave it at that for now.
+#Dumb brute force method, but it got 1 star. I got bored/fed up with this day, so I'll leave it at that for now.
